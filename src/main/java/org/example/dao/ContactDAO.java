@@ -13,9 +13,8 @@ import java.util.List;
 
 
 public class ContactDAO {
-    public static List<Contact> getAllContacts() {
+    public List<Contact> getAllContacts() {
         List<Contact> contacts = new ArrayList<>();
-
         try (
                 Connection conn = DBUtils.connectToDB();
                 Statement st = conn.createStatement();
@@ -27,7 +26,6 @@ public class ContactDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return Collections.unmodifiableList(contacts);
     }
 }

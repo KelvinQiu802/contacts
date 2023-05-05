@@ -16,7 +16,6 @@ public class DBUtils {
 
         conn = DriverManager.getConnection("jdbc:mysql://" + host + "/" +
                 dbName + "?user=" + userName + "&password=" + password);
-        System.out.println("### Connection Success ###");
 
         return conn;
     }
