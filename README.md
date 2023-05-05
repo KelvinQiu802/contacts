@@ -21,4 +21,5 @@
 | GET        | /api/contacts                 | To retrieve all contacts in the db | JSON            |
 | GET        | /api/contacts/{id}            | To retrieve a contact by id        | JSON            |
 | POST       | /api/contacts/{name}/{number} | Create a new contact               | Plain Text      |
+| DELETE     | /api/contacts/{id}            | Delete a contact                   | Plain Text      |
 
