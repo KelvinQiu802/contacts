@@ -20,5 +20,7 @@ public class Main {
         app.start(7070);
 
         System.out.println("### The Server is Running ###");
+
+        // ChatGPT code review test!
     }
 }
