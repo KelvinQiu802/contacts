@@ -14,3 +14,9 @@
 [{"name":"John Smith","number":"555-1234"},{"name":"Jane Doe","number":"555-5678"},{"name":"Bob Johnson","number":"555-9012"}]
 ```
 
+## API Documentation
+
+| HTTP Verbs | Endpoints     | Action                             | Response Format |
+| ---------- | ------------- | ---------------------------------- | --------------- |
+| GET        | /api/contacts | To retrieve all contacts in the db | JSON            |
+
