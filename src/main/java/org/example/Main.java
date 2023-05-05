@@ -15,12 +15,10 @@ public class Main {
                 }
         );
 
-        app.get("/api/contacts", ContactController::allContacts);
+        ContactController contactController = new ContactController();
+
+        app.get("/api/contacts", contactController::allContacts);
 
         app.start(7070);
-
-        System.out.println("### The Server is Running ###");
-
-        // ChatGPT code review test!
     }
 }

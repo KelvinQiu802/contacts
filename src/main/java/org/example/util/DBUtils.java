@@ -2,7 +2,9 @@ package org.example.util;
 
 import org.example.dbconfig.DBConfig;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DBUtils {
     public static Connection connectToDB() throws SQLException {
@@ -14,24 +16,7 @@ public class DBUtils {
 
         conn = DriverManager.getConnection("jdbc:mysql://" + host + "/" +
                 dbName + "?user=" + userName + "&password=" + password);
-        System.out.println("### Connection Success ###");
 
         return conn;
-    }
-
-    public static void closeAll(Connection conn, Statement st, ResultSet rs) {
-        try {
-            if (conn != null) {
-                conn.close();
-            }
-            if (st != null) {
-                st.close();
-            }
-            if (rs != null) {
-                rs.close();
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }

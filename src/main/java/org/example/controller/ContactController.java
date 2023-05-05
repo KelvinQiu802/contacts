@@ -4,7 +4,13 @@ import io.javalin.http.Context;
 import org.example.dao.ContactDAO;
 
 public class ContactController {
-    public static void allContacts(Context ctx) {
-        ctx.json(ContactDAO.getAllContacts());
+    private ContactDAO contactDAO = null;
+
+    public ContactController() {
+        this.contactDAO = new ContactDAO();
+    }
+
+    public void allContacts(Context ctx) {
+        ctx.json(contactDAO.getAllContacts());
     }
 }
