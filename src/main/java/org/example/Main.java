@@ -19,6 +19,8 @@ public class Main {
 
         app.get("/api/contacts", contactController::allContacts);
 
+        app.get("/api/contacts/{id}", contactController::contactById);
+
         app.start(7070);
     }
 }
