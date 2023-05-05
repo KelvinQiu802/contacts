@@ -39,4 +39,15 @@ public class ContactDAO {
             }
         }
     }
+
+    public void createContact(String name, String number) throws SQLException {
+        try (
+                Connection conn = DBUtils.connectToDB();
+                PreparedStatement st = conn.prepareStatement("INSERT INTO contacts (name, number) VALUES (?, ?);");
+        ) {
+            st.setString(1, name);
+            st.setString(2, number);
+            st.executeUpdate();
+        }
+    }
 }

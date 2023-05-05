@@ -30,4 +30,18 @@ public class ContactController {
             ctx.result("Internal Server Error").status(500);
         }
     }
+
+    public void createContact(Context ctx) {
+        try {
+            String name = ctx.pathParam("name");
+            String number = ctx.pathParam("number");
+            if (name.isBlank() || number.isBlank()) {
+                ctx.result("name and number can not be blank.").status(400);
+            } else {
+                contactDAO.createContact(name, number);
+            }
+        } catch (SQLException e) {
+            ctx.result("Internal Server Error").status(500);
+        }
+    }
 }

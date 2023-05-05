@@ -21,6 +21,8 @@ public class Main {
 
         app.get("/api/contacts/{id}", contactController::contactById);
 
+        app.post("/api/contacts/{name}/{number}", contactController::createContact);
+
         app.start(7070);
     }
 }
