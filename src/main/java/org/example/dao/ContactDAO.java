@@ -1,4 +1,7 @@
-package org.example;
+package org.example.dao;
+
+import org.example.model.Contact;
+import org.example.util.DBUtils;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.dbconfig;
 
 public class DBConfigExample {
     public final static String host = "HOST";
