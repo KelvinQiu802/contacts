@@ -16,7 +16,7 @@
 
 ## API Documentation
 
-| HTTP Verbs | Endpoints     | Action                             |
-| ---------- | ------------- | ---------------------------------- |
-| GET        | /api/contacts | To retrieve all contacts in the db |
+| HTTP Verbs | Endpoints     | Action                             | Response Format |
+| ---------- | ------------- | ---------------------------------- | --------------- |
+| GET        | /api/contacts | To retrieve all contacts in the db | JSON            |
 
