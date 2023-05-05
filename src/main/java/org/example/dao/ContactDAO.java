@@ -18,7 +18,7 @@ public class ContactDAO {
                 ResultSet rs = st.executeQuery("SELECT * FROM contacts;");
         ) {
             while (rs.next()) {
-                contacts.add(new Contact(rs.getString("name"), rs.getString("number")));
+                contacts.add(new Contact(rs.getInt("id"), rs.getString("name"), rs.getString("number")));
             }
         }
         return Collections.unmodifiableList(contacts);
@@ -27,12 +27,12 @@ public class ContactDAO {
     public Contact getContactById(int id) throws SQLException {
         try (
                 Connection conn = DBUtils.connectToDB();
-                PreparedStatement st = conn.prepareStatement("SELECT name, number FROM contacts WHERE id = ?;");
+                PreparedStatement st = conn.prepareStatement("SELECT * FROM contacts WHERE id = ?;");
         ) {
             st.setInt(1, id);
             try (ResultSet rs = st.executeQuery()) {
                 if (rs.next()) {
-                    return new Contact(rs.getString("name"), rs.getString("number"));
+                    return new Contact(rs.getInt("id"), rs.getString("name"), rs.getString("number"));
                 } else {
                     return null;
                 }
