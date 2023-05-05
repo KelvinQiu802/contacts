@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -27,6 +28,6 @@ public class ContactDAO {
             e.printStackTrace();
         }
 
-        return contacts;
+        return Collections.unmodifiableList(contacts);
     }
 }
