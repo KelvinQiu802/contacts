@@ -45,4 +45,16 @@ public class ContactController {
             ctx.result("Internal Server Error").status(500);
         }
     }
+
+    public void deleteContact(Context ctx) {
+        try {
+            int id = Integer.parseInt(ctx.pathParam("id"));
+            contactDAO.deleteContact(id);
+            ctx.result("Success").status(200);
+        } catch (NumberFormatException e) {
+            ctx.result("Invalid id").status(400);
+        } catch (SQLException e) {
+            ctx.result("Internal Server Error").status(500);
+        }
+    }
 }

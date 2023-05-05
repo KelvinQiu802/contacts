@@ -23,6 +23,8 @@ public class Main {
 
         app.post("/api/contacts/{name}/{number}", contactController::createContact);
 
+        app.delete("/api/contacts/{id}", contactController::deleteContact);
+
         app.start(7070);
     }
 }

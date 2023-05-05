@@ -50,4 +50,14 @@ public class ContactDAO {
             st.executeUpdate();
         }
     }
+
+    public void deleteContact(int id) throws SQLException {
+        try (
+                Connection conn = DBUtils.connectToDB();
+                PreparedStatement st = conn.prepareStatement("DELETE FROM contacts WHERE id = ?;");
+        ) {
+            st.setInt(1, id);
+            st.executeUpdate();
+        }
+    }
 }
