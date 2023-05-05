@@ -16,8 +16,9 @@
 
 ## API Documentation
 
-| HTTP Verbs | Endpoints          | Action                             | Response Format |
-| ---------- | ------------------ | ---------------------------------- | --------------- |
-| GET        | /api/contacts      | To retrieve all contacts in the db | JSON            |
-| GET        | /api/contacts/{id} | To retrieve a contact by id        | JSON            |
+| HTTP Verbs | Endpoints                     | Action                             | Response Format |
+| ---------- | ----------------------------- | ---------------------------------- | --------------- |
+| GET        | /api/contacts                 | To retrieve all contacts in the db | JSON            |
+| GET        | /api/contacts/{id}            | To retrieve a contact by id        | JSON            |
+| POST       | /api/contacts/{name}/{number} | Create a new contact               | Plain Text      |
 
