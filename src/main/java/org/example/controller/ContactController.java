@@ -39,6 +39,7 @@ public class ContactController {
                 ctx.result("name and number can not be blank.").status(400);
             } else {
                 contactDAO.createContact(name, number);
+                ctx.result("Success").status(200);
             }
         } catch (SQLException e) {
             ctx.result("Internal Server Error").status(500);
